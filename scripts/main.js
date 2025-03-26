@@ -144,17 +144,13 @@ document.addEventListener('DOMContentLoaded', function() {
     rsvpForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Get form values
+        // Get form values for UI feedback
         const attendance = document.querySelector('input[name="attendance"]:checked').value;
         const friends = document.getElementById('friends').value;
         const message = document.getElementById('message').value;
         
-        // Create FormData object and append form fields
-        const formData = new FormData();
-        formData.append("form-name", "contact");
-        formData.append("attendance", attendance);
-        formData.append("friends", friends);
-        formData.append("message", message);
+        // Create FormData from the form element (includes all fields automatically)
+        const formData = new FormData(rsvpForm);
         
         // Submit to Netlify
         fetch("/", {
