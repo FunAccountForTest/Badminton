@@ -225,6 +225,10 @@ button:hover {
   transition: transform 0.3s ease-out;
 }
 
+#shadow {
+  pointer-events: auto;
+}
+
 #slime-avatar {
   width: 50px;
   height: 40px;
