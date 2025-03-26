@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-SG">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badminton Invitation 🏸</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="avatar-container">
+      <div id="slime-avatar">
+        <div class="mouth"></div>
+      </div>
+      <div id="shadow"></div>
+    </div>
+    <div class="container">
+        <header>
+            <h1>Badminton Next Monday? 🏸</h1>
+            <p class="tagline">🧸 31st March</p>
+            <div class="star">★</div>
+        </header>
+
+        <section class="event-details">
+            <div class="detail-card">
+                <div class="detail-icon">🕚</div>
+                <div class="detail-info">
+                    <h3>Time</h3>
+                    <p>11:00 AM - 1:00 PM</p>
+                </div>
+            </div>
+
+            <div class="detail-card">
+                <div class="detail-icon">📍</div>
+                <div class="detail-info">
+                    <h3>Location</h3>
+                    <p>NTU North Hill 21B - 1</p>
+                    <p>Court 2 (NHFH)</p>
+                </div>
+            </div>
+
+            <div class="detail-card">
+                <div class="detail-icon">👥</div>
+                <div class="detail-info">
+                    <h3>Who's Playing</h3>
+                    <p>You + 3? ppl from ODAC + your friends too. We have 2 courts</p>
+                    <p class="small-note">(Rackets provided if needed)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="rsvp-section">
+            <div class="form-container">
+                <form id="rsvpForm">
+                    <div class="form-group">
+                        <h2>Let Me Know!</h2>
+                        <p>Can you make it?</p>
+
+                        <div class="radio-option">
+                            <input type="radio" id="yes" name="attendance" value="yes" required>
+                            <label for="yes">Yes, I'll be there</label>
+                        </div>
+
+                        <div class="radio-option">
+                            <input type="radio" id="try" name="attendance" value="try">
+                            <label for="try">I'll try my best</label>
+                        </div>
+
+                        <div class="radio-option">
+                            <input type="radio" id="cant" name="attendance" value="cant">
+                            <label for="cant">Can't this time</label>
+                        </div>
+
+                        <p>Bringing friends?</p>
+                        <input type="text" id="friends" name="friends" placeholder="How many?">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Anything else?</label>
+                        <textarea id="message" name="message" rows="2" placeholder="E.g. Bringing my own racket"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Response</button>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <p>Looking forward to a fun game!</p>
+        </footer>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

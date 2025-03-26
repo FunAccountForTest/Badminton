@@ -1,0 +1,370 @@
+/* Subtle Care Bears Inspired Theme */
+:root {
+    --soft-pink: #ffd1dc;
+    --light-blue: #d4f1f9;
+    --pastel-yellow: #fff8c9;
+    --mint-green: #c1f0c1;
+    --lavender: #e3d1ff;
+}
+
+body {
+    font-family: 'Comic Neue', cursive, sans-serif;
+    background-color: var(--light-blue);
+    margin: 0;
+    padding: 0;
+    color: #555;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 3px solid var(--soft-pink);
+    position: relative;
+    overflow: hidden;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+h1 {
+    color: #ff85a2;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    color: #7d7d7d;
+    font-size: 1.1em;
+}
+
+.event-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.detail-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--lavender);
+    display: flex;
+    align-items: center;
+}
+
+.detail-icon {
+    font-size: 1.5em;
+    margin-right: 15px;
+    color: #ff85a2;
+}
+
+.rsvp-section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border: 2px dashed var(--mint-green);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ff85a2;
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--pastel-yellow);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+button {
+    background-color: #ff85a2;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1em;
+    transition: all 0.3s;
+    display: block;
+    margin: 0 auto;
+}
+
+button:hover {
+    background-color: #ff6b8b;
+    transform: translateY(-2px);
+}
+
+/* Form Styling */
+.form-group h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  color: #ff69b4;
+  margin-bottom: 15px;
+}
+
+.form-group p {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  color: #ff69b4;
+  margin-bottom: 10px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.radio-option input[type="radio"] {
+  margin-right: 10px;
+  accent-color: #ff69b4;
+}
+
+.radio-option label {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  color: #ff69b4;
+  cursor: pointer;
+}
+
+/* Avatar Emotional States */
+#slime-avatar.happy {
+  background-color: #FFD700;
+  animation: happy-bounce 0.5s ease infinite;
+}
+
+#slime-avatar.sad {
+  background-color: #87CEEB;
+  transform: scale(0.9);
+}
+
+#slime-avatar.angry {
+  background-color: #FF6B8B;
+  animation: angry-shake 0.1s linear infinite;
+}
+
+@keyframes happy-bounce {
+  0%, 100% { transform: translateY(0) scale(1.1); }
+  50% { transform: translateY(-10px) scale(1.2); }
+}
+
+@keyframes angry-shake {
+  0%, 100% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+}
+
+/* Decorative elements */
+.container::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: var(--pastel-yellow);
+    border-radius: 50%;
+    top: -30px;
+    right: -30px;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.container::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: var(--mint-green);
+    border-radius: 50%;
+    bottom: -50px;
+    left: -50px;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.star {
+    position: absolute;
+    color: #ffd166;
+    font-size: 1.2em;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.3; }
+    to { opacity: 0.8; }
+}
+
+/* Avatar styles */
+#avatar-container {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.3s ease-out;
+}
+
+#slime-avatar {
+  width: 50px;
+  height: 40px;
+  background: var(--mint-green);
+  border-radius: 50% 50% 60% 60%;
+  position: relative;
+  animation: slime-bounce 0.8s infinite alternate;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transform-origin: 50% 30%;
+}
+
+/* Slime face */
+#slime-avatar::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  top: 5px;
+  left: 10px;
+  opacity: 0.7;
+}
+
+/* Eyes */
+#slime-avatar::after {
+  content: "◠◠";
+  position: absolute;
+  font-size: 12px;
+  color: #333;
+  top: 12px;
+  left: 15px;
+  animation: blink 4s infinite;
+}
+
+/* Smile */
+#slime-avatar .mouth {
+  position: absolute;
+  width: 20px;
+  height: 8px;
+  border-radius: 0 0 50% 50%;
+  background: #333;
+  top: 22px;
+  left: 15px;
+}
+
+@keyframes blink {
+  0%, 45%, 55%, 100% { transform: scaleY(1); }
+  48%, 52% { transform: scaleY(0.1); }
+}
+
+/* Emotional States */
+#slime-avatar.emotional {
+  animation: emotion-pulse 0.8s ease-in-out infinite;
+}
+
+/* Enhanced Avatar Emotion States */
+#slime-avatar {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#slime-avatar.happy {
+  background-color: #FFDD00;
+  transform: scale(1.2) translateY(-5px);
+  animation: happy-bounce 0.5s ease infinite;
+}
+
+#slime-avatar.sad {
+  background-color: #9FC5E8;
+  transform: scale(0.9) translateY(5px);
+}
+
+#slime-avatar.angry {
+  background-color: #FF6B6B;
+  transform: scale(1.1) rotate(5deg);
+  animation: angry-shake 0.1s linear infinite;
+}
+
+/* Emote Bubble */
+#emote-bubble {
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  font-size: 18px;
+  animation: bubble-float 2s infinite alternate ease-in-out;
+}
+
+/* Animations */
+@keyframes happy-bounce {
+  0%, 100% { transform: translateY(0) scale(1.2); }
+  50% { transform: translateY(-10px) scale(1.3); }
+}
+
+@keyframes angry-shake {
+  0% { transform: translateX(-2px) scale(1.1) rotate(5deg); }
+  50% { transform: translateX(2px) scale(1.1) rotate(-5deg); }
+  100% { transform: translateX(0) scale(1.1) rotate(5deg); }
+}
+
+@keyframes bubble-float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-5px); }
+}
+
+/* Response Hover Zones */
+.response-option:hover + #slime-avatar {
+  transform: scale(1.2);
+}
+
+#shadow {
+  width: 20px;
+  height: 8px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 50%;
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: shadow-pulse 0.8s infinite alternate;
+}
+
+@keyframes slime-bounce {
+  from { transform: translateY(0) scale(1); }
+  to { transform: translateY(-10px) scale(1.1); }
+}
+
+@keyframes shadow-pulse {
+  from { transform: translateX(-50%) scale(1); }
+  to { transform: translateX(-50%) scale(0.8); }
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  #slime-avatar {
+    width: 30px;
+    height: 30px;
+  }
+  
+  #shadow {
+    bottom: -12px;
+  }
+}
