@@ -143,6 +143,11 @@ document.addEventListener('DOMContentLoaded', function() {
     rsvpForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
+        // Add click animation to submit button
+        const submitBtn = document.querySelector('.submit-btn');
+        submitBtn.classList.add('clicked');
+        setTimeout(() => submitBtn.classList.remove('clicked'), 500);
+        
         // Get form values for UI feedback
         const attendance = document.querySelector('input[name="attendance"]:checked').value;
         const friends = document.getElementById('friends').value;
