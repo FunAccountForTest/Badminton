@@ -145,25 +145,33 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         
         // Get form values
-        const name = document.getElementById('name').value;
         const attendance = document.querySelector('input[name="attendance"]:checked').value;
-        
-        // Get food preferences
-        const foodPreferences = [];
-        document.querySelectorAll('input[name="food"]:checked').forEach(checkbox => {
-            foodPreferences.push(checkbox.value);
-        });
-        
+        const friends = document.getElementById('friends').value;
         const message = document.getElementById('message').value;
         
-        // Create a response card
-        addResponse(name, attendance, foodPreferences, message);
+        // Create FormData object and append form fields
+        const formData = new FormData();
+        formData.append("form-name", "contact");
+        formData.append("attendance", attendance);
+        formData.append("friends", friends);
+        formData.append("message", message);
         
-        // Reset form
-        rsvpForm.reset();
-        
-        // Show success message
-        showNotification('RSVP submitted successfully! Can see you there!');
+        // Submit to Netlify
+        fetch("/", {
+            method: "POST",
+            body: formData
+        })
+        .then(() => {
+            // Create a response card
+            addResponse(attendance, friends, message);
+            
+            // Reset form
+            rsvpForm.reset();
+            
+            // Show success message
+            showNotification('RSVP submitted successfully! Can see you there!');
+        })
+        .catch(error => console.error("Form submission error:", error));
     });
     
     // Dummy data for demonstration
