@@ -104,10 +104,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     window.addEventListener('touchmove', (e) => {
-        e.preventDefault();
         updateMousePosition(e.touches[0]);
         throttledEmotionUpdate();
-    }, { passive: false });
+    }, { passive: true });
 
     // Initialize
     updateAvatarEmotion();
